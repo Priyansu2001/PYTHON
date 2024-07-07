@@ -1,0 +1,34 @@
+#S = open("C:\\Users\\Priyanshu patnaik\\OneDrive\\Desktop\\Acid\A.text","x")
+#print("File created successfully")
+
+#S = open("C:\\Users\\Priyanshu patnaik\\OneDrive\\Desktop\\Acid\A.text","w")
+#S.write("Python developer\n SQL|Django")
+#print("Data inserted successfully")
+
+#S = open("C:\\Users\\Priyanshu patnaik\\OneDrive\\Desktop\\Acid\A.text","r")
+#print(S.read())
+
+#S = open("C:\\Users\\Priyanshu patnaik\\OneDrive\\Desktop\\Acid\A.text","r")
+#print(S.readline())
+
+'''try:
+  S = open("C:\\Users\\Priyanshu patnaik\\OneDrive\\Desktop\\Acid\A.text","r")
+  print(S.readline())
+except:
+   print("Plz create the file and read it")
+else:
+   S.close()
+   print("File closed successfully")'''
+
+'''try:
+  with open("C:\\Users\\Priyanshu patnaik\\OneDrive\\Desktop\\Acid\A.text") as f2:
+   with open("C:\\Users\\Priyanshu patnaik\\OneDrive\\Desktop\\Acid\B.text","w") as f3:
+     for i in f2:
+        f3.write(i)
+except:
+   print("Plz create the file and read it")
+else:
+   f3.close()
+   print("File closed successfully")'''
+
+

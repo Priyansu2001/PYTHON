@@ -1,0 +1,16 @@
+import openpyxl
+
+# Load the workbook, and select the active worksheet
+wb = openpyxl.load_workbook(r"C:\Users\Priyanshu patnaik\OneDrive\Desktop\Excel files\practice1.xlsx")
+ws = wb.active
+
+# Iterate through each row and column and print the cell values
+for row in ws.iter_rows(values_only=True):
+    for cell in row:
+        print(cell, end="\t")
+    print()
+
+
+
+
+

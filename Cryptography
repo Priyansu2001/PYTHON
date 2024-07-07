@@ -1,0 +1,13 @@
+import cryptography
+
+from cryptography.fernet import Fernet
+
+key = Fernet.generate_key()
+
+cipher = Fernet(key)
+
+message = "This is a secret message".encode()
+print("Original message:",message.decode())
+
+encrypted_message = cipher.encrypt(message)
+print("Secret message",encrypted_message.decode())

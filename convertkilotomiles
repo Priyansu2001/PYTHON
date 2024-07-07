@@ -1,0 +1,4 @@
+kilo = float(input("Enter the distance in kilometers:"))
+conversion_factor = 0.621371
+miles = kilo * conversion_factor
+print(f"{kilo} kilometers is equal to {miles} miles.")

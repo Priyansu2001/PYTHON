@@ -1,0 +1,9 @@
+import calendar
+
+def display_calendar(year, month):
+    return calendar.month(year, month)
+
+
+year = 2024
+month = 8
+print(display_calendar(year, month))
