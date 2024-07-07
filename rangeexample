@@ -1,0 +1,16 @@
+# Range function example - 1
+for x in range(11):
+ print(x)
+
+# Range function ex - 2
+for x in range(1,20):
+  print(x)
+
+# Range function ex - 3
+for x in range(2,22,+2):
+    print(x)
+
+# Range function ex - 4
+for x in range(22,2,-2):
+    print(x)
+

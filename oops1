@@ -1,0 +1,15 @@
+#1 Create a Class with instance attributes.
+
+class vehicle:
+    def __init__(self,max_speed,mileage):
+        self.max_speed = max_speed
+        self.mileage = mileage
+
+car = vehicle(max_speed = 150 , mileage = 50)
+print(car.max_speed, "km/hr","and",car.mileage ,"km/l")
+
+#2 Create a Vehicle class without any variables and methods.
+class vehicle:
+    pass
+
+  

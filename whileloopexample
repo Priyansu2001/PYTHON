@@ -1,0 +1,31 @@
+# While loop example - 1
+n = 1
+while n<=10:
+    print(n)
+    n+=1
+
+# While loop example - 2
+n = 1
+while n!=0:
+    n = int(input("Enter a number:"))
+    print("The square of the number is",n*n)
+    print("End of the program")
+
+# While loop example - 3
+num = 1
+while num<=5:
+    print(num,"is less than 5")
+    num+=1
+else:
+    print("We reached to 5")
+
+# While loop example - 4
+
+password = "India"
+input_password = input("Enter the password:")
+while password!= input_password:
+ input_password = input("Enter the password:")
+else:
+   print("Unlocked successfully")
+
+    

@@ -1,0 +1,40 @@
+import hashlib
+
+class URLShortener:
+    def __init__(self):
+        self.url_map = {}
+
+    def shorten_url(self, original_url):
+        # Generate hash for the original URL
+        hash_object = hashlib.sha256(original_url.encode())
+        hash_code = hash_object.hexdigest()[:8]  # Using the first 8 characters of the hash code as the shortened URL
+
+        # Store the mapping in the dictionary
+        self.url_map[hash_code] = original_url
+
+        # Return the shortened URL
+        return "short.url/" + hash_code
+
+    def retrieve_url(self, shortened_url):
+        # Extract hash code from the shortened URL
+        hash_code = shortened_url.split("/")[-1]
+
+        # Retrieve the original URL from the dictionary
+        original_url = self.url_map.get(hash_code)
+
+        if original_url:
+            return original_url
+        else:
+            return "URL not found."
+
+# Sample usage
+shortener = URLShortener()
+
+# Shorten a URL
+original_url = "https://www.example.com"
+shortened_url = shortener.shorten_url(original_url)
+print("Shortened URL:", shortened_url)
+
+# Retrieve original URL from shortened URL
+retrieved_url = shortener.retrieve_url(shortened_url)
+print("Retrieved URL:", retrieved_url)

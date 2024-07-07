@@ -1,0 +1,113 @@
+from tkinter import *
+
+root = Tk()
+root.geometry("500x300")
+
+def getvals():
+    print("Accpted successfully")
+
+# Heading
+Label(root,text = "STUDENT REGISTRATION FORM",font = "ar 15 bold").grid(row=0,column = 3)
+
+# Feild name
+name = Label(root,text="Name")
+phone_no = Label(root,text="phone_no")
+gender = Label(root,text="gender")
+education = Label(root,text="education")
+email = Label(root,text="email")
+state = Label(root,text="state")
+country = Label(root,text="country")
+age = Label(root,text="age")
+language = Label(root,text="language")
+courses = Label(root,text="courses")
+
+# Packing all the feild name
+name.grid(row=1,column=2)
+phone_no.grid(row=2,column=2)
+gender.grid(row=3,column=2)
+education.grid(row=4,column=2)
+email.grid(row=5,column=2)
+state.grid(row=6,column=2)
+country.grid(row=7,column=2)
+age.grid(row=8,column=2)
+language.grid(row=9,column=2)
+courses.grid(row=10,column=2)
+
+# This are the variable which i store data
+namevalue = StringVar()
+phone_novalue = StringVar()
+gendervalue = StringVar()
+educationvalue = StringVar()
+emailvalue = StringVar()
+statevalue = StringVar()
+countryvalue = StringVar()
+agevalue = StringVar()
+languagevalue = StringVar()
+coursesvalue = StringVar()
+
+checkvalue = IntVar()
+
+# Created entry feild where we can put data
+nameentry = Entry(root,textvariable=namevalue)
+phone_noentry = Entry(root,textvariable=phone_novalue)
+genderentry = Entry(root,textvariable=gendervalue)
+educationentry = Entry(root,textvariable=educationvalue)
+emailentry = Entry(root,textvariable=emailvalue)
+stateentry = Entry(root,textvariable=statevalue)
+countryentry = Entry(root,textvariable=countryvalue)
+ageentry = Entry(root,textvariable=agevalue)
+languageentry = Entry(root,textvariable=languagevalue)
+coursesentry = Entry(root,textvariable=coursesvalue)
+
+# Packing all entry feild 
+nameentry.grid(row=1,column=3)
+phone_noentry.grid(row=2,column=3)
+genderentry.grid(row=3,column=3)
+educationentry.grid(row=4,column=3)
+emailentry.grid(row=5,column=3)
+stateentry.grid(row=6,column=3)
+countryentry.grid(row=7,column=3)
+ageentry.grid(row=8,column=3)
+languageentry.grid(row=9,column=3)
+coursesentry.grid(row=10,column=3)
+
+# Gender selection radio buttons
+male_radio = Radiobutton(root, text="Male", variable=gendervalue, value="Male")
+female_radio = Radiobutton(root, text="Female", variable=gendervalue, value="Female")
+other_radio = Radiobutton(root, text="Other", variable=gendervalue, value="Other")
+
+# Grid layout for radio buttons
+male_radio.grid(row=3, column=3)
+female_radio.grid(row=3, column=4)
+other_radio.grid(row=3, column=5)
+
+# Education selection radio buttons
+diploma = Radiobutton(root,text="Diploma",variable=educationvalue,value="Diploma")
+btech = Radiobutton(root,text="Btech",variable=educationvalue,value="Btech")
+mtech = Radiobutton(root,text="Mtech",variable=educationvalue,value="Mtech")
+bsc = Radiobutton(root,text="Bsc",variable=educationvalue,value="Bsc")
+msc = Radiobutton(root,text="Msc",variable=educationvalue,value="Msc")
+bca = Radiobutton(root,text="Bca",variable=educationvalue,value="Bca")
+mca = Radiobutton(root,text="Mca",variable=educationvalue,value="Mca")
+
+# Grid layout for radio buttons
+diploma.grid(row=4,column=4)
+btech.grid(row=4,column=5)
+mtech.grid(row=4,column=6)
+bsc.grid(row=4,column=7)
+msc.grid(row=4,column=8)
+bca.grid(row=4,column=9)
+mca.grid(row=4,column=10)
+
+
+# creating checkbox
+checkbtn = Checkbutton(text = "Remember me",variable = checkvalue)
+checkbtn.grid(row=11,column=3)
+
+# Submit button
+Button(text="Submit",command=getvals).grid(row=12,column=3)
+
+
+root.mainloop()
+
+

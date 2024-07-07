@@ -1,0 +1,23 @@
+'''from tkinter import *
+window = Tk()
+l1=Label(window,text = "Welcome to Python World")
+l1.pack()
+window.mainloop()'''
+
+'''from tkinter import *
+window = Tk()
+l1=Label(window,text = "Welcome to Python World")
+l1.grid(row = 0,column = 1)
+window.mainloop()'''
+
+'''from tkinter import *
+window = Tk()
+l1=Label(window,text = "Welcome to Python World")
+l1.place(x=50,y=100)
+window.mainloop()'''
+
+from tkinter import *
+window = Tk()
+l1=Label(window,text = "Welcome to Python World",bg="green",fg="black",width=50)
+l1.place(x=60,y=120)
+window.mainloop()

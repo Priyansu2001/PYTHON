@@ -1,0 +1,9 @@
+# Largest among N digit
+
+arr = []
+num = int(input("Enter N number : "))
+for n in range(num):
+    numbers = int(input("Enter number : "))
+    arr.append(numbers)
+print("Maximum number of element",max(arr))
+print("Minimum number of element",min(arr))

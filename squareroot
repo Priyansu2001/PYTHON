@@ -1,0 +1,4 @@
+# Find the square root
+a = float(input("Enter a number:"))
+sqrt = a**0.5
+print("The square root of",a,"is",sqrt)

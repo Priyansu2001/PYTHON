@@ -1,0 +1,56 @@
+from tkinter import *
+
+root = Tk()
+root.geometry("500x300")
+
+def getvals():
+    print("Accepted successfully")
+
+# Heading
+Label(root, text="STUDENT REGISTRATION FORM", font="Arial 15 bold").grid(row=0, column=3)
+
+# Field names
+fields = ["Name", "Phone No", "Gender", "Education", "Email", "State", "Country", "Age", "Language", "Courses"]
+for idx, field in enumerate(fields, start=1):
+    Label(root, text=field).grid(row=idx, column=2)
+
+# Variables to store data
+namevalue = StringVar()
+phone_novalue = StringVar()
+gendervalue = StringVar()
+educationvalue = StringVar()
+emailvalue = StringVar()
+statevalue = StringVar()
+countryvalue = StringVar()
+agevalue = StringVar()
+languagevalue = StringVar()
+coursesvalue = StringVar()
+
+checkvalue = IntVar()
+
+# Entry fields
+entries = [
+    (namevalue, 1), (phone_novalue, 2), (emailvalue, 5), (statevalue, 6),
+    (countryvalue, 7), (agevalue, 8), (languagevalue, 9), (coursesvalue, 10)
+]
+for var, row in entries:
+    Entry(root, textvariable=var).grid(row=row, column=3)
+
+# Gender selection radio buttons
+Radiobutton(root, text="Male", variable=gendervalue, value="Male").grid(row=3, column=3)
+Radiobutton(root, text="Female", variable=gendervalue, value="Female").grid(row=3, column=4)
+Radiobutton(root, text="Other", variable=gendervalue, value="Other").grid(row=3, column=5)
+
+# Education selection radio buttons
+education_options = ["Diploma", "Btech", "Mtech", "Bsc", "Msc", "Bca", "Mca"]
+for col, option in enumerate(education_options, start=3):
+    Radiobutton(root, text=option, variable=educationvalue, value=option).grid(row=4, column=col)
+
+# Checkbox
+Checkbutton(root, text="Remember me", variable=checkvalue).grid(row=11, column=3)
+
+# Submit button
+Button(root, text="Submit", command=getvals).grid(row=12, column=3)
+
+root.mainloop()
+

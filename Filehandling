@@ -1,0 +1,7 @@
+f = open("D:\python\demofile2.txt", "a")
+f.write("MY name is Priyansu Patnaik")
+f.close()
+
+#open and read the file after the appending:
+f = open("D:\python\demofile2.txt", "r")
+print(f.read())

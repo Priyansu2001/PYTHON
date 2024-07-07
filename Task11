@@ -1,0 +1,68 @@
+import time
+
+def intro():
+    print("Welcome to the Text-Based Adventure Game!")
+    time.sleep(1)
+    print("You find yourself in a mysterious forest...")
+    time.sleep(2)
+    print("Your goal is to find the treasure hidden deep within the forest.")
+    time.sleep(2)
+    print("Let's begin!")
+
+def explore_forest():
+    print("\nYou start exploring the forest...")
+    time.sleep(2)
+    print("You encounter a fork in the path.")
+    choice = input("Do you go left or right? (left/right): ").lower()
+    if choice == "left":
+        print("You chose to go left...")
+        time.sleep(1)
+        print("You stumble upon a hidden cave!")
+        enter_cave()
+    elif choice == "right":
+        print("You chose to go right...")
+        time.sleep(1)
+        print("You continue along the path...")
+        time.sleep(2)
+        print("You encounter a river blocking your way.")
+        cross_river()
+    else:
+        print("Invalid choice. Try again.")
+        explore_forest()
+
+def enter_cave():
+    print("\nYou enter the cave...")
+    time.sleep(2)
+    print("Inside the cave, you see a glimmering object.")
+    time.sleep(2)
+    print("It's the treasure!")
+    time.sleep(2)
+    print("Congratulations! You found the treasure and won the game!")
+
+def cross_river():
+    print("\nYou need to cross the river to continue.")
+    time.sleep(2)
+    print("You see a sturdy-looking bridge upstream.")
+    time.sleep(2)
+    choice = input("Do you use the bridge or try to swim across? (bridge/swim): ").lower()
+    if choice == "bridge":
+        print("You cautiously cross the bridge...")
+        time.sleep(2)
+        print("You successfully cross the river.")
+        explore_forest()
+    elif choice == "swim":
+        print("You attempt to swim across the river...")
+        time.sleep(2)
+        print("The strong current pulls you downstream.")
+        time.sleep(2)
+        print("You're swept away and lose the game.")
+    else:
+        print("Invalid choice. Try again.")
+        cross_river()
+
+def main():
+    intro()
+    explore_forest()
+
+if __name__ == "__main__":
+    main()

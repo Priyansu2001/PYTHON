@@ -1,0 +1,50 @@
+import random
+
+class Flashcard:
+    def __init__(self, question, answer):
+        self.question = question
+        self.answer = answer
+
+class FlashcardQuiz:
+    def __init__(self):
+        self.flashcards = []
+
+    def add_flashcard(self, flashcard):
+        self.flashcards.append(flashcard)
+
+    def study_flashcards(self):
+        for flashcard in self.flashcards:
+            print("Question:", flashcard.question)
+            input("Press Enter to see the answer...")
+            print("Answer:", flashcard.answer)
+            print()
+
+    def take_quiz(self):
+        print("Welcome to the Flashcard Quiz!")
+        score = 0
+        random.shuffle(self.flashcards)
+        for flashcard in self.flashcards:
+            print("Question:", flashcard.question)
+            user_answer = input("Your answer: ")
+            if user_answer.lower() == flashcard.answer.lower():
+                print("Correct!")
+                score += 1
+            else:
+                print("Incorrect. The correct answer is:", flashcard.answer)
+            print()
+        print("Quiz completed!")
+        print("Your score:", score, "/", len(self.flashcards))
+
+# Sample usage
+flashcard_quiz = FlashcardQuiz()
+
+# Adding flashcards
+flashcard_quiz.add_flashcard(Flashcard("What is the capital of France?", "Paris"))
+flashcard_quiz.add_flashcard(Flashcard("What is the largest planet in our solar system?", "Jupiter"))
+flashcard_quiz.add_flashcard(Flashcard("Who wrote 'Romeo and Juliet'?", "William Shakespeare"))
+
+# Study flashcards
+flashcard_quiz.study_flashcards()
+
+# Take quiz
+flashcard_quiz.take_quiz()

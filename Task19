@@ -1,0 +1,50 @@
+import datetime
+import time
+import winsound  # For Windows systems. For other systems, you may need to use a different module.
+
+def set_alarm(hour, minute):
+    alarm_time = datetime.datetime.now().replace(hour=hour, minute=minute, second=0, microsecond=0)
+    current_time = datetime.datetime.now()
+
+    while current_time < alarm_time:
+        time.sleep(1)
+        current_time = datetime.datetime.now()
+
+    play_alarm_sound()
+
+def play_alarm_sound():
+    frequency = 2500  # Set frequency (2500 Hz)
+    duration = 3000  # Set duration (3 seconds)
+    winsound.Beep(frequency, duration)
+
+def get_alarm_time():
+    while True:
+        try:
+            hour = int(input("Enter the hour (0-23) for the alarm: "))
+            if 0 <= hour <= 23:
+                break
+            else:
+                print("Invalid hour. Please enter a number between 0 and 23.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+    while True:
+        try:
+            minute = int(input("Enter the minute (0-59) for the alarm: "))
+            if 0 <= minute <= 59:
+                break
+            else:
+                print("Invalid minute. Please enter a number between 0 and 59.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+    return hour, minute
+
+def main():
+    print("Welcome to the Alarm Clock!")
+    hour, minute = get_alarm_time()
+    print(f"Alarm set for {hour:02d}:{minute:02d}.")
+    set_alarm(hour, minute)
+
+if __name__ == "__main__":
+    main()
